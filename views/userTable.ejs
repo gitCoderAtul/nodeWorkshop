@@ -1,0 +1,40 @@
+hello
+<%= a %>
+<ul>
+    <% data.forEach(function(obj){ %>
+     <%= obj.username %>
+     <%= obj.userage %>
+    <% }); %>
+  </ul>
+
+  <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+    </thead>
+     <tbody>
+        <% data.forEach(function(obj){ %>
+            <tr>
+                <th>
+                    <%= obj.username %>           
+                </th>
+                <th>
+                    <%= obj.userage %>
+                </th>
+
+            </tr>
+
+           <% }); %>
+     </tbody>
+  </table>
+
+  <!-- <form method="post" action="http://localhost:9000/user"> or -->
+    <!-- enctype="multipart/form-data"  use for file upload -->
+    <form method="post" action="/user/uploadFile" enctype="multipart/form-data">
+    <input type="text" name="username"><br>
+    <input type="text" name="userage"><br>
+    <input type="file" multiple name="userProfile"><br>
+   <button type="submit"> Submit</button>
+  </form>
